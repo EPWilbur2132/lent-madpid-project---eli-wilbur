@@ -9,11 +9,11 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     game.over(false)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, function (sprite, location) {
-    game.over(true)
+    game.over(true, effects.smiles)
 })
 let clarence: Sprite = null
 clarence = sprites.create(img`
@@ -34,18 +34,28 @@ clarence = sprites.create(img`
     . . . . . 8 8 8 8 . . . . . . . 
     . . . . . 8 8 8 8 . . . . . . . 
     `, SpriteKind.Player)
+let burger = sprites.create(img`
+    . . . . c c c b b b b b . . . . 
+    . . c c b 4 4 4 4 4 4 b b b . . 
+    . c c 4 4 4 4 4 5 4 4 4 4 b c . 
+    . e 4 4 4 4 4 4 4 4 4 5 4 4 e . 
+    e b 4 5 4 4 5 4 4 4 4 4 4 4 b c 
+    e b 4 4 4 4 4 4 4 4 4 4 5 4 4 e 
+    e b b 4 4 4 4 4 4 4 4 4 4 4 b e 
+    . e b 4 4 4 4 4 5 4 4 4 4 b e . 
+    8 7 e e b 4 4 4 4 4 4 b e e 6 8 
+    8 7 2 e e e e e e e e e e 2 7 8 
+    e 6 6 2 2 2 2 2 2 2 2 2 2 6 c e 
+    e c 6 7 6 6 7 7 7 6 6 7 6 c c e 
+    e b e 8 8 c c 8 8 c c c 8 e b e 
+    e e b e c c e e e e e c e b e e 
+    . e e b b 4 4 4 4 4 4 4 4 e e . 
+    . . . c c c c c e e e e e . . . 
+    `, SpriteKind.Food)
+burger.setPosition(randint(0, 20), 88)
 clarence.setPosition(8, 78)
 clarence.ay = 500
-tiles.setTilemap(tiles.createTilemap(hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000100000000000300000000000000000000000000010000000002020000000001010005000000000001000000020202000000010100000000000000010102020202020201010101040404010101040101000202020202020101010404040401010104040404020202020202`, img`
-    . . . . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . 2 . . . . . . 
-    . . . . . . . . . . . . . . . . . . 2 2 
-    . . . . 2 2 . . . . . . . . . . . 2 2 2 
-    . . . 2 2 . . . . . . . 2 2 2 2 2 2 2 2 
-    2 2 2 2 . . . 2 2 2 . 2 2 . 2 2 2 2 2 2 
-    2 2 2 . . . . 2 2 2 . . . . 2 2 2 2 2 2 
-    `, [myTiles.transparency16,sprites.builtin.brick,sprites.builtin.field0,sprites.dungeon.collectibleInsignia,sprites.dungeon.hazardLava1], TileScale.Sixteen))
+tiles.setTilemap(tilemap`level1`)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -170,3 +180,6 @@ scene.setBackgroundImage(img`
     `)
 scene.cameraFollowSprite(clarence)
 controller.moveSprite(clarence, 100, 0)
+if (burger.isHittingTile(CollisionDirection.Bottom)) {
+    burger.vy = -200
+}
