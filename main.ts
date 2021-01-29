@@ -10,12 +10,16 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sp
     game.over(false)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-	
+    burger.destroy()
+    music.baDing.play()
+    info.changeScoreBy(1)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, function (sprite, location) {
     game.over(true, effects.smiles)
 })
+let burger: Sprite = null
 let clarence: Sprite = null
+info.setScore(0)
 clarence = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -34,25 +38,16 @@ clarence = sprites.create(img`
     . . . . . 8 8 8 8 . . . . . . . 
     . . . . . 8 8 8 8 . . . . . . . 
     `, SpriteKind.Player)
-let burger = sprites.create(img`
-    . . . . c c c b b b b b . . . . 
-    . . c c b 4 4 4 4 4 4 b b b . . 
-    . c c 4 4 4 4 4 5 4 4 4 4 b c . 
-    . e 4 4 4 4 4 4 4 4 4 5 4 4 e . 
-    e b 4 5 4 4 5 4 4 4 4 4 4 4 b c 
-    e b 4 4 4 4 4 4 4 4 4 4 5 4 4 e 
-    e b b 4 4 4 4 4 4 4 4 4 4 4 b e 
-    . e b 4 4 4 4 4 5 4 4 4 4 b e . 
-    8 7 e e b 4 4 4 4 4 4 b e e 6 8 
-    8 7 2 e e e e e e e e e e 2 7 8 
-    e 6 6 2 2 2 2 2 2 2 2 2 2 6 c e 
-    e c 6 7 6 6 7 7 7 6 6 7 6 c c e 
-    e b e 8 8 c c 8 8 c c c 8 e b e 
-    e e b e c c e e e e e c e b e e 
-    . e e b b 4 4 4 4 4 4 4 4 e e . 
-    . . . c c c c c e e e e e . . . 
+burger = sprites.create(img`
+    . . b b b b . . 
+    . b 5 5 5 5 b . 
+    b 5 d 3 3 d 5 b 
+    b 5 3 5 5 1 5 b 
+    c 5 3 5 5 1 d c 
+    c d d 1 1 d d c 
+    . f d d d d f . 
+    . . f f f f . . 
     `, SpriteKind.Food)
-burger.setPosition(randint(0, 20), 88)
 clarence.setPosition(8, 78)
 clarence.ay = 500
 tiles.setTilemap(tilemap`level1`)
