@@ -4,19 +4,6 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
-    "level1": {
-        "id": "level1",
-        "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxNDAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMDAwMDAwMDAyMDIwMDAwMDAwMDAxMDEwMDA1MDAwMDAwMDAwMDAxMDAwMDAwMDIwMjAyMDAwMDAwMDEwMTAwMDAwMDAwMDAwMDAwMDEwMTAyMDIwMjAyMDIwMjAxMDEwMTAxMDQwNDA0MDEwMTAxMDQwMTAxMDAwMjAyMDIwMjAyMDIwMTAxMDEwNDA0MDQwNDAxMDEwMTA0MDQwNDA0MDIwMjAyMDIwMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMDAwMjIwMDAwMDAwMDAwMjAyMjAwMjAwMjAwMDAwMDIyMjIyMjIyMjIyMjAwMjAyMjIwMDIyMjIyMjIyMjAyMDAyMDIyMDAwMDIyMjIyMg==",
-        "tileset": [
-            "myTiles.transparency16",
-            "sprites.builtin.brick",
-            "sprites.builtin.field0",
-            "sprites.dungeon.collectibleInsignia",
-            "sprites.dungeon.hazardLava1"
-        ],
-        "displayName": "level1"
-    },
     "level2": {
         "id": "level2",
         "mimeType": "application/mkcd-tilemap",
@@ -38,6 +25,20 @@
             "sprites.dungeon.hazardLava1"
         ],
         "displayName": "level3"
+    },
+    "level1": {
+        "id": "level1",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxNDAwMDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDAwMDAwMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMDAwMDAwNTAyMDIwMDAwMDAwNTAxMDEwMDA1MDAwMDAwMDAwNTAxMDAwMDAwMDIwMjAyMDAwMDAwMDEwMTAwMDAwMDAwMDAwMDAwMDEwMTAyMDIwMjAyMDIwMjAxMDEwMTAxMDQwNDA0MDEwMTAxMDQwMTAxMDAwMjAyMDIwMjAyMDIwMTAxMDEwNDA0MDQwNDAxMDEwMTA0MDQwNDA0MDIwMjAyMDIwMjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIwMDAwMjIwMDAwMDAwMDAwMjAyMjAwMjAwMjAwMDAwMDIyMjIyMjIyMjIyMjAwMjAyMjIwMDIyMjIyMjIyMjAyMDAyMDIyMDAwMDIyMjIyMg==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.builtin.brick",
+            "sprites.builtin.field0",
+            "sprites.dungeon.collectibleInsignia",
+            "sprites.dungeon.hazardLava1",
+            "sprites.builtin.coral1"
+        ],
+        "displayName": "level1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
